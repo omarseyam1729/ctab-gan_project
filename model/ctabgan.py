@@ -30,13 +30,13 @@ class CTABGAN():
     """
 
     def __init__(self,
-                 raw_csv_path="Real_Datasets/Adult.csv",
+                 raw_csv_path="Real_Datasets/Datasets/Car/car.csv",
                  test_ratio=0.20,
-                 categorical_columns=['workclass', 'education', 'marital-status', 'occupation', 'relationship', 'race', 'gender', 'native-country', 'income'], 
+                 categorical_columns=['Buying','Maint','Doors','Persons','Lug_boot','Safety','Class'], 
                  log_columns=[],
-                 mixed_columns={'capital-loss': [0.0], 'capital-gain': [0.0]},
-                 integer_columns=['age', 'fnlwgt', 'capital-gain', 'capital-loss', 'hours-per-week'],
-                 problem_type={"Classification": 'income'},
+                 mixed_columns={},
+                 integer_columns=[],
+                 problem_type={"Classification": 'Class'},
                  epochs=1):
 
         self.__name__ = 'CTABGAN'
