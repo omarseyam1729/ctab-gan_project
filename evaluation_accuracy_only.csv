@@ -1,0 +1,5 @@
+satellite ,Accuracy,car,Accuracy,loan,Accuracy,letter-rec,Accuracy,nursery,Accuracy,magic,Accuracy,shuttle,Accuracy
+Logistic Regression,0.1936,Logistic Regression,0.7123,Logistic Regression,0.9128,Logistic Regression,0.7584,Logistic Regression,0.7343,Logistic Regression,0.1284,Logistic Regression,0.1984
+Random Forest,0.2546,Random Forest,0.6923,Random Forest,0.2389,Random Forest,0.7203,Random Forest,0.7548,Random Forest,0.2893,Random Forest,0.2384
+XGBoost,0.2573,XGBoost,0.7234,XGBoost,0.2983,XGBoost,0.6923,XGBoost,0.6923,XGBoost,0.2342,XGBoost,0.2389
+MLP Classifier,0.2519,MLP Classifier,0.7185,MLP Classifier,0.2584,MLP Classifier,0.7134,MLP Classifier,0.7439,MLP Classifier,0.2483,MLP Classifier,0.2145
