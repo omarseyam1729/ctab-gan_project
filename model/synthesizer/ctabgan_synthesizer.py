@@ -567,7 +567,7 @@ class CTABGANSynthesizer:
                  random_dim=100,
                  num_channels=64,
                  l2scale=1e-5,
-                 batch_size=500,
+                 batch_size=8,
                  epochs=1):
                  
         self.random_dim = random_dim
@@ -578,11 +578,10 @@ class CTABGANSynthesizer:
         self.l2scale = l2scale
         self.batch_size = batch_size
         self.epochs = epochs
-        self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
+        self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.generator = None
 
     def fit(self, train_data=pd.DataFrame, categorical=[], mixed={}, type={}):
-        
         # obtaining the column index of the target column used for ML tasks
         problem_type = None
         target_index = None
@@ -606,7 +605,9 @@ class CTABGANSynthesizer:
         self.cond_generator = Condvec(train_data, self.transformer.output_info)
 
         # obtaining the desired height/width for converting tabular data records to square images for feeding it to discriminator network 		
-        sides = [4, 8, 16, 24, 32]
+        sides = [2**i for i in range(20)]
+        print("seyam")
+        print(data_dim)
         # the discriminator takes the transformed training data concatenated by the corresponding conditional vectors as input
         col_size_d = data_dim + self.cond_generator.n_opt
         for i in sides:
@@ -615,7 +616,7 @@ class CTABGANSynthesizer:
                 break
         
         # obtaining the desired height/width for generating square images from the generator network that can be converted back to tabular domain 		
-        sides = [4, 8, 16, 24, 32]
+        sides = [2**i for i in range(20)]
         col_size_g = data_dim
         for i in sides:
             if i * i >= col_size_g:

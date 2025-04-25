@@ -1,5 +1,5 @@
 Model,Accuracy
-Logistic Regression,0.7572254335260116
-Random Forest,0.7167630057803468
-XGBoost,0.7052023121387283
-MLP Classifier,0.7109826589595376
+Logistic Regression,0.574
+Random Forest,0.593
+XGBoost,0.551
+MLP Classifier,0.597
