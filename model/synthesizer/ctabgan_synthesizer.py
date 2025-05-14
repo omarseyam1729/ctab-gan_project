@@ -606,7 +606,6 @@ class CTABGANSynthesizer:
 
         # obtaining the desired height/width for converting tabular data records to square images for feeding it to discriminator network 		
         sides = [2**i for i in range(20)]
-        print("seyam")
         print(data_dim)
         # the discriminator takes the transformed training data concatenated by the corresponding conditional vectors as input
         col_size_d = data_dim + self.cond_generator.n_opt

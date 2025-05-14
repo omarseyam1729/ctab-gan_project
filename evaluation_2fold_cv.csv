@@ -1,0 +1,5 @@
+Model,Average Accuracy,Fold 1,Fold 2
+Logistic Regression,0.04575,0.0443,0.0472
+Random Forest,0.0539,0.0528,0.055
+XGBoost,0.055650000000000005,0.0531,0.0582
+MLP Classifier,0.0634,0.0642,0.0626
